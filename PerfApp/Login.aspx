@@ -28,6 +28,9 @@
             padding: 0;
             border: 0;
         }
+        fieldset {
+            border:medium;
+        }
          
         container
          {
