@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PerformanceDBModelStoreContainer" CdmEntityContainer="PerformanceAppEntities">
+    <EntitySetMapping Name="Appraisal_t">
+      <EntityTypeMapping TypeName="PerformanceDBModel.Appraisal_t">
+        <MappingFragment StoreEntitySet="Appraisal_t">
+          <ScalarProperty Name="ProAppOtherCmnt" ColumnName="ProAppOtherCmnt" />
+          <ScalarProperty Name="ProRevRating" ColumnName="ProRevRating" />
+          <ScalarProperty Name="ProRevComment" ColumnName="ProRevComment" />
+          <ScalarProperty Name="SkillRevRating" ColumnName="SkillRevRating" />
+          <ScalarProperty Name="SkillRevComment" ColumnName="SkillRevComment" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="EmpSkills" ColumnName="EmpSkills" />
+          <ScalarProperty Name="EmpProjects" ColumnName="EmpProjects" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="DoAssessment" ColumnName="DoAssessment" />
+          <ScalarProperty Name="DoAssessmentDisc" ColumnName="DoAssessmentDisc" />
+          <ScalarProperty Name="DoAssessorCompletion" ColumnName="DoAssessorCompletion" />
+          <ScalarProperty Name="DoFinalization" ColumnName="DoFinalization" />
+          <ScalarProperty Name="SelfOverall" ColumnName="SelfOverall" />
+          <ScalarProperty Name="AssessorOverAll" ColumnName="AssessorOverAll" />
+          <ScalarProperty Name="FinalOverAll" ColumnName="FinalOverAll" />
+          <ScalarProperty Name="RecPromotion" ColumnName="RecPromotion" />
+          <ScalarProperty Name="NotPromoting" ColumnName="NotPromoting" />
+          <ScalarProperty Name="Understanding" ColumnName="Understanding" />
+          <ScalarProperty Name="Responsibility" ColumnName="Responsibility" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="To" ColumnName="To" />
+          <ScalarProperty Name="Weightage" ColumnName="Weightage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_t">
+      <EntityTypeMapping TypeName="PerformanceDBModel.Employee_t">
+        <MappingFragment StoreEntitySet="Employee_t">
+          <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Dateofbirth" ColumnName="Dateofbirth" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Reviewer" ColumnName="Reviewer" />
+          <ScalarProperty Name="Appraiser" ColumnName="Appraiser" />
+          <ScalarProperty Name="Dateofjoining" ColumnName="Dateofjoining" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="LastAppRating" ColumnName="LastAppRating" />
+          <ScalarProperty Name="DesigId" ColumnName="DesigId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PwdReset" ColumnName="PwdReset" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpProject_t">
+      <EntityTypeMapping TypeName="PerformanceDBModel.EmpProject_t">
+        <MappingFragment StoreEntitySet="EmpProject_t">
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="EmpProjId" ColumnName="EmpProjId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="SelfComments" ColumnName="SelfComments" />
+          <ScalarProperty Name="AppComments" ColumnName="AppComments" />
+          <ScalarProperty Name="Self_Rating" ColumnName="Self_Rating" />
+          <ScalarProperty Name="App_Rating" ColumnName="App_Rating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpSkills_t">
+      <EntityTypeMapping TypeName="PerformanceDBModel.EmpSkills_t">
+        <MappingFragment StoreEntitySet="EmpSkills_t">
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="SelfComments" ColumnName="SelfComments" />
+          <ScalarProperty Name="AppComments" ColumnName="AppComments" />
+          <ScalarProperty Name="EmpSkillId" ColumnName="EmpSkillId" />
+          <ScalarProperty Name="SkillId" ColumnName="SkillId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Self_Rating" ColumnName="Self_Rating" />
+          <ScalarProperty Name="App_Rating" ColumnName="App_Rating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parameter_t">
+      <EntityTypeMapping TypeName="PerformanceDBModel.Parameter_t">
+        <MappingFragment StoreEntitySet="Parameter_t">
+          <ScalarProperty Name="CriteriaId" ColumnName="CriteriaId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects_t">
+      <EntityTypeMapping TypeName="PerformanceDBModel.Projects_t">
+        <MappingFragment StoreEntitySet="Projects_t">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Manager" ColumnName="Manager" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role_t">
+      <EntityTypeMapping TypeName="PerformanceDBModel.Role_t">
+        <MappingFragment StoreEntitySet="Role_t">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="CriteriaIds" ColumnName="CriteriaIds" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skills_t">
+      <EntityTypeMapping TypeName="PerformanceDBModel.Skills_t">
+        <MappingFragment StoreEntitySet="Skills_t">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Objective_t">
+      <EntityTypeMapping TypeName="PerformanceDBModel.Objective_t">
+        <MappingFragment StoreEntitySet="Objective_t">
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="ObjectiveID" ColumnName="ObjectiveID" />
+          <ScalarProperty Name="Provideyourinputc" ColumnName="Provideyourinputc" />
+          <ScalarProperty Name="Provideyourinputb" ColumnName="Provideyourinputb" />
+          <ScalarProperty Name="Provideyourinputa" ColumnName="Provideyourinputa" />
+          <ScalarProperty Name="Provideyourinput" ColumnName="Provideyourinput" />
+          <ScalarProperty Name="Communicationb" ColumnName="Communicationb" />
+          <ScalarProperty Name="Communicationa" ColumnName="Communicationa" />
+          <ScalarProperty Name="Communication" ColumnName="Communication" />
+          <ScalarProperty Name="CustomerDelight" ColumnName="CustomerDelight" />
+          <ScalarProperty Name="Commitment" ColumnName="Commitment" />
+          <ScalarProperty Name="HighlyPositive" ColumnName="HighlyPositive" />
+          <ScalarProperty Name="Attitude" ColumnName="Attitude" />
+          <ScalarProperty Name="TeamBuilding" ColumnName="TeamBuilding" />
+          <ScalarProperty Name="SelfMotivating" ColumnName="SelfMotivating" />
+          <ScalarProperty Name="ImplementationconsiderationforINV" ColumnName="ImplementationconsiderationforINV" />
+          <ScalarProperty Name="WhitePapers" ColumnName="WhitePapers" />
+          <ScalarProperty Name="PrepartaionofIndepth" ColumnName="PrepartaionofIndepth" />
+          <ScalarProperty Name="KnowledgeSharingSessions" ColumnName="KnowledgeSharingSessions" />
+          <ScalarProperty Name="CertificationsToBeAchievedManagementb" ColumnName="CertificationsToBeAchievedManagementb" />
+          <ScalarProperty Name="CertificationsToBeAchievedManagementa" ColumnName="CertificationsToBeAchievedManagementa" />
+          <ScalarProperty Name="CertificationsToBeAchievedManagement" ColumnName="CertificationsToBeAchievedManagement" />
+          <ScalarProperty Name="OCPINV" ColumnName="OCPINV" />
+          <ScalarProperty Name="CertificationsToBeAchievedproduct" ColumnName="CertificationsToBeAchievedproduct" />
+          <ScalarProperty Name="OraclePreSales" ColumnName="OraclePreSales" />
+          <ScalarProperty Name="CertificationsToBeAchievedGeneric" ColumnName="CertificationsToBeAchievedGeneric" />
+          <ScalarProperty Name="Formulatingthedesignforhandling" ColumnName="Formulatingthedesignforhandling" />
+          <ScalarProperty Name="InnovativeThoughts" ColumnName="InnovativeThoughts" />
+          <ScalarProperty Name="SkillImprovisationc" ColumnName="SkillImprovisationc" />
+          <ScalarProperty Name="SkillImprovisationb" ColumnName="SkillImprovisationb" />
+          <ScalarProperty Name="SkillImprovisationa" ColumnName="SkillImprovisationa" />
+          <ScalarProperty Name="LearningPurchasing" ColumnName="LearningPurchasing" />
+          <ScalarProperty Name="Newskillacquired" ColumnName="Newskillacquired" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Log_t">
+      <EntityTypeMapping TypeName="PerformanceDBModel.Log_t">
+        <MappingFragment StoreEntitySet="Log_t">
+          <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+          <ScalarProperty Name="Method" ColumnName="Method" />
+          <ScalarProperty Name="InnerException" ColumnName="InnerException" />
+          <ScalarProperty Name="Page" ColumnName="Page" />
+          <ScalarProperty Name="Error_Message" ColumnName="Error_Message" />
+          <ScalarProperty Name="LogId" ColumnName="LogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

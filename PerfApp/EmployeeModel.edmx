@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PerformanceDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="PerformanceDBModelStoreContainer">
+          <EntitySet Name="Appraisal_t" EntityType="PerformanceDBModel.Store.Appraisal_t" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Employee_t" EntityType="PerformanceDBModel.Store.Employee_t" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EmpProject_t" EntityType="PerformanceDBModel.Store.EmpProject_t" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EmpSkills_t" EntityType="PerformanceDBModel.Store.EmpSkills_t" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Log_t" EntityType="PerformanceDBModel.Store.Log_t" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Objective_t" EntityType="PerformanceDBModel.Store.Objective_t" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Parameter_t" EntityType="PerformanceDBModel.Store.Parameter_t" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Projects_t" EntityType="PerformanceDBModel.Store.Projects_t" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role_t" EntityType="PerformanceDBModel.Store.Role_t" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Skills_t" EntityType="PerformanceDBModel.Store.Skills_t" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Appraisal_t">
+          <Key>
+            <PropertyRef Name="AppId" />
+          </Key>
+          <Property Name="AppId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EmpSkills" Type="nvarchar" />
+          <Property Name="EmpProjects" Type="nvarchar" />
+          <Property Name="EmpId" Type="int" />
+          <Property Name="DoAssessment" Type="datetime" />
+          <Property Name="DoAssessmentDisc" Type="datetime" />
+          <Property Name="DoAssessorCompletion" Type="datetime" />
+          <Property Name="DoFinalization" Type="datetime" />
+          <Property Name="SelfOverall" Type="nvarchar" MaxLength="50" />
+          <Property Name="AssessorOverAll" Type="nvarchar" MaxLength="50" />
+          <Property Name="FinalOverAll" Type="nvarchar" MaxLength="50" />
+          <Property Name="RecPromotion" Type="nvarchar" MaxLength="50" />
+          <Property Name="NotPromoting" Type="nvarchar" MaxLength="50" />
+          <Property Name="Understanding" Type="nvarchar" MaxLength="50" />
+          <Property Name="Responsibility" Type="nvarchar" MaxLength="50" />
+          <Property Name="From" Type="datetime" />
+          <Property Name="To" Type="datetime" />
+          <Property Name="Weightage" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="int" />
+          <Property Name="SkillRevComment" Type="nvarchar" MaxLength="50" />
+          <Property Name="SkillRevRating" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProRevComment" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProRevRating" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProAppOtherCmnt" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Employee_t">
+          <Key>
+            <PropertyRef Name="Emp_Id" />
+          </Key>
+          <Property Name="Emp_Id" Type="int" Nullable="false" />
+          <Property Name="Firstname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lastname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dateofbirth" Type="datetime" />
+          <Property Name="Designation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dateofjoining" Type="datetime" />
+          <Property Name="Location" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastAppRating" Type="int" />
+          <Property Name="DesigId" Type="uniqueidentifier" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="RoleId" Type="uniqueidentifier" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="PwdReset" Type="int" />
+          <Property Name="Reviewer" Type="int" />
+          <Property Name="Appraiser" Type="int" />
+        </EntityType>
+        <EntityType Name="EmpProject_t">
+          <Key>
+            <PropertyRef Name="EmpProjId" />
+          </Key>
+          <Property Name="EmpId" Type="int" Nullable="false" />
+          <Property Name="EmpProjId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Type" Type="int" />
+          <Property Name="SelfComments" Type="nvarchar" MaxLength="50" />
+          <Property Name="AppComments" Type="nvarchar" MaxLength="50" />
+          <Property Name="Self_Rating" Type="nvarchar" MaxLength="50" />
+          <Property Name="App_Rating" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EmpSkills_t">
+          <Key>
+            <PropertyRef Name="SkillId" />
+          </Key>
+          <Property Name="EmpId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SelfComments" Type="nvarchar" MaxLength="50" />
+          <Property Name="AppComments" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpSkillId" Type="uniqueidentifier" />
+          <Property Name="SkillId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Type" Type="int" />
+          <Property Name="Self_Rating" Type="nvarchar" MaxLength="50" />
+          <Property Name="App_Rating" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Log_t">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="int" Nullable="false" />
+          <Property Name="Error_Message" Type="nvarchar" MaxLength="50" />
+          <Property Name="Page" Type="nvarchar" MaxLength="50" />
+          <Property Name="InnerException" Type="nvarchar" MaxLength="50" />
+          <Property Name="Method" Type="nvarchar" MaxLength="50" />
+          <Property Name="Datetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Objective_t">
+          <Key>
+            <PropertyRef Name="ObjectiveID" />
+          </Key>
+          <Property Name="Newskillacquired" Type="nvarchar" MaxLength="250" />
+          <Property Name="LearningPurchasing" Type="datetime" />
+          <Property Name="SkillImprovisationa" Type="nvarchar" MaxLength="250" />
+          <Property Name="SkillImprovisationb" Type="nvarchar" MaxLength="250" />
+          <Property Name="SkillImprovisationc" Type="datetime" />
+          <Property Name="InnovativeThoughts" Type="nvarchar(max)" />
+          <Property Name="Formulatingthedesignforhandling" Type="datetime" />
+          <Property Name="CertificationsToBeAchievedGeneric" Type="nvarchar" MaxLength="250" />
+          <Property Name="OraclePreSales" Type="datetime" />
+          <Property Name="CertificationsToBeAchievedproduct" Type="nvarchar" MaxLength="250" />
+          <Property Name="OCPINV" Type="datetime" />
+          <Property Name="CertificationsToBeAchievedManagement" Type="nvarchar" MaxLength="250" />
+          <Property Name="CertificationsToBeAchievedManagementa" Type="nvarchar" MaxLength="250" />
+          <Property Name="CertificationsToBeAchievedManagementb" Type="datetime" />
+          <Property Name="KnowledgeSharingSessions" Type="nvarchar" MaxLength="250" />
+          <Property Name="PrepartaionofIndepth" Type="datetime" />
+          <Property Name="WhitePapers" Type="nvarchar" MaxLength="250" />
+          <Property Name="ImplementationconsiderationforINV" Type="datetime" />
+          <Property Name="SelfMotivating" Type="nvarchar" MaxLength="250" />
+          <Property Name="TeamBuilding" Type="datetime" />
+          <Property Name="Attitude" Type="nvarchar" MaxLength="250" />
+          <Property Name="HighlyPositive" Type="datetime" />
+          <Property Name="Commitment" Type="nvarchar" MaxLength="250" />
+          <Property Name="CustomerDelight" Type="datetime" />
+          <Property Name="Communication" Type="nvarchar" MaxLength="250" />
+          <Property Name="Communicationa" Type="nvarchar" MaxLength="250" />
+          <Property Name="Communicationb" Type="datetime" />
+          <Property Name="Provideyourinput" Type="nvarchar" MaxLength="500" />
+          <Property Name="Provideyourinputa" Type="nvarchar" MaxLength="500" />
+          <Property Name="Provideyourinputb" Type="nvarchar" MaxLength="500" />
+          <Property Name="Provideyourinputc" Type="nvarchar" MaxLength="500" />
+          <Property Name="ObjectiveID" Type="int" Nullable="false" />
+          <Property Name="EmpId" Type="int" />
+        </EntityType>
+        <EntityType Name="Parameter_t">
+          <Key>
+            <PropertyRef Name="CriteriaId" />
+          </Key>
+          <Property Name="CriteriaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Projects_t">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Manager" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Role_t">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CriteriaIds" Type="nvarchar" MaxLength="150" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Skills_t">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PerformanceDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="PerformanceAppEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Appraisal_t" EntityType="PerformanceDBModel.Appraisal_t" />
+          <EntitySet Name="Employee_t" EntityType="PerformanceDBModel.Employee_t" />
+          <EntitySet Name="EmpProject_t" EntityType="PerformanceDBModel.EmpProject_t" />
+          <EntitySet Name="EmpSkills_t" EntityType="PerformanceDBModel.EmpSkills_t" />
+          <EntitySet Name="Parameter_t" EntityType="PerformanceDBModel.Parameter_t" />
+          <EntitySet Name="Projects_t" EntityType="PerformanceDBModel.Projects_t" />
+          <EntitySet Name="Role_t" EntityType="PerformanceDBModel.Role_t" />
+          <EntitySet Name="Skills_t" EntityType="PerformanceDBModel.Skills_t" />
+          <EntitySet Name="Objective_t" EntityType="PerformanceDBModel.Objective_t" />
+          <EntitySet Name="Log_t" EntityType="PerformanceDBModel.Log_t" />
+        </EntityContainer>
+        <EntityType Name="Appraisal_t">
+          <Key>
+            <PropertyRef Name="AppId" />
+          </Key>
+          <Property Name="AppId" Type="Guid" Nullable="false" />
+          <Property Name="EmpSkills" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="EmpProjects" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="EmpId" Type="Int32" />
+          <Property Name="DoAssessment" Type="DateTime" Precision="3" />
+          <Property Name="DoAssessmentDisc" Type="DateTime" Precision="3" />
+          <Property Name="DoAssessorCompletion" Type="DateTime" Precision="3" />
+          <Property Name="DoFinalization" Type="DateTime" Precision="3" />
+          <Property Name="SelfOverall" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AssessorOverAll" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FinalOverAll" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RecPromotion" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NotPromoting" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Understanding" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Responsibility" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="From" Type="DateTime" Precision="3" />
+          <Property Name="To" Type="DateTime" Precision="3" />
+          <Property Name="Weightage" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="Status" />
+          <Property Type="String" Name="SkillRevComment" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SkillRevRating" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProRevComment" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProRevRating" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProAppOtherCmnt" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Employee_t">
+          <Key>
+            <PropertyRef Name="Emp_Id" />
+          </Key>
+          <Property Name="Emp_Id" Type="Int32" Nullable="false" />
+          <Property Name="Firstname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Lastname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Dateofbirth" Type="DateTime" Precision="3" />
+          <Property Name="Designation" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Reviewer" Type="Int32" />
+          <Property Name="Appraiser" Type="Int32" />
+          <Property Name="Dateofjoining" Type="DateTime" Precision="3" />
+          <Property Name="Location" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastAppRating" Type="Int32" />
+          <Property Name="DesigId" Type="Guid" />
+          <Property Name="Password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RoleId" Type="Guid" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PwdReset" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EmpProject_t">
+          <Key>
+            <PropertyRef Name="EmpProjId" />
+          </Key>
+          <Property Name="EmpId" Type="Int32" Nullable="false" />
+          <Property Name="EmpProjId" Type="Guid" Nullable="false" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="SelfComments" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AppComments" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Self_Rating" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="App_Rating" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="EmpSkills_t">
+          <Key>
+            <PropertyRef Name="SkillId" />
+          </Key>
+          <Property Name="EmpId" Type="Int32" Nullable="false" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="SelfComments" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AppComments" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EmpSkillId" Type="Guid" />
+          <Property Name="SkillId" Type="Guid" Nullable="false" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="Self_Rating" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="App_Rating" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Parameter_t">
+          <Key>
+            <PropertyRef Name="CriteriaId" />
+          </Key>
+          <Property Name="CriteriaId" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Projects_t">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Manager" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Role_t">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="CriteriaIds" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Skills_t">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Objective_t">
+          <Key>
+            <PropertyRef Name="ObjectiveID" />
+          </Key>
+          <Property Type="String" Name="Newskillacquired" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LearningPurchasing" Precision="3" />
+          <Property Type="String" Name="SkillImprovisationa" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SkillImprovisationb" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="SkillImprovisationc" Precision="3" />
+          <Property Type="String" Name="InnovativeThoughts" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Formulatingthedesignforhandling" Precision="3" />
+          <Property Type="String" Name="CertificationsToBeAchievedGeneric" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="OraclePreSales" Precision="3" />
+          <Property Type="String" Name="CertificationsToBeAchievedproduct" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="OCPINV" Precision="3" />
+          <Property Type="String" Name="CertificationsToBeAchievedManagement" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CertificationsToBeAchievedManagementa" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CertificationsToBeAchievedManagementb" Precision="3" />
+          <Property Type="String" Name="KnowledgeSharingSessions" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="PrepartaionofIndepth" Precision="3" />
+          <Property Type="String" Name="WhitePapers" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ImplementationconsiderationforINV" Precision="3" />
+          <Property Type="String" Name="SelfMotivating" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="TeamBuilding" Precision="3" />
+          <Property Type="String" Name="Attitude" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="HighlyPositive" Precision="3" />
+          <Property Type="String" Name="Commitment" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CustomerDelight" Precision="3" />
+          <Property Type="String" Name="Communication" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Communicationa" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Communicationb" Precision="3" />
+          <Property Type="String" Name="Provideyourinput" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Provideyourinputa" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Provideyourinputb" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Provideyourinputc" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ObjectiveID" Nullable="false" />
+          <Property Type="Int32" Name="EmpId" />
+        </EntityType>
+        <EntityType Name="Log_t">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Type="Int32" Name="LogId" Nullable="false" />
+          <Property Type="String" Name="Error_Message" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Page" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InnerException" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Method" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Datetime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PerformanceDBModelStoreContainer" CdmEntityContainer="PerformanceAppEntities">
+          <EntitySetMapping Name="Appraisal_t">
+            <EntityTypeMapping TypeName="PerformanceDBModel.Appraisal_t">
+              <MappingFragment StoreEntitySet="Appraisal_t">
+                <ScalarProperty Name="ProAppOtherCmnt" ColumnName="ProAppOtherCmnt" />
+                <ScalarProperty Name="ProRevRating" ColumnName="ProRevRating" />
+                <ScalarProperty Name="ProRevComment" ColumnName="ProRevComment" />
+                <ScalarProperty Name="SkillRevRating" ColumnName="SkillRevRating" />
+                <ScalarProperty Name="SkillRevComment" ColumnName="SkillRevComment" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AppId" ColumnName="AppId" />
+                <ScalarProperty Name="EmpSkills" ColumnName="EmpSkills" />
+                <ScalarProperty Name="EmpProjects" ColumnName="EmpProjects" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="DoAssessment" ColumnName="DoAssessment" />
+                <ScalarProperty Name="DoAssessmentDisc" ColumnName="DoAssessmentDisc" />
+                <ScalarProperty Name="DoAssessorCompletion" ColumnName="DoAssessorCompletion" />
+                <ScalarProperty Name="DoFinalization" ColumnName="DoFinalization" />
+                <ScalarProperty Name="SelfOverall" ColumnName="SelfOverall" />
+                <ScalarProperty Name="AssessorOverAll" ColumnName="AssessorOverAll" />
+                <ScalarProperty Name="FinalOverAll" ColumnName="FinalOverAll" />
+                <ScalarProperty Name="RecPromotion" ColumnName="RecPromotion" />
+                <ScalarProperty Name="NotPromoting" ColumnName="NotPromoting" />
+                <ScalarProperty Name="Understanding" ColumnName="Understanding" />
+                <ScalarProperty Name="Responsibility" ColumnName="Responsibility" />
+                <ScalarProperty Name="From" ColumnName="From" />
+                <ScalarProperty Name="To" ColumnName="To" />
+                <ScalarProperty Name="Weightage" ColumnName="Weightage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_t">
+            <EntityTypeMapping TypeName="PerformanceDBModel.Employee_t">
+              <MappingFragment StoreEntitySet="Employee_t">
+                <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Dateofbirth" ColumnName="Dateofbirth" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Reviewer" ColumnName="Reviewer" />
+                <ScalarProperty Name="Appraiser" ColumnName="Appraiser" />
+                <ScalarProperty Name="Dateofjoining" ColumnName="Dateofjoining" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="LastAppRating" ColumnName="LastAppRating" />
+                <ScalarProperty Name="DesigId" ColumnName="DesigId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PwdReset" ColumnName="PwdReset" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmpProject_t">
+            <EntityTypeMapping TypeName="PerformanceDBModel.EmpProject_t">
+              <MappingFragment StoreEntitySet="EmpProject_t">
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="EmpProjId" ColumnName="EmpProjId" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="SelfComments" ColumnName="SelfComments" />
+                <ScalarProperty Name="AppComments" ColumnName="AppComments" />
+                <ScalarProperty Name="Self_Rating" ColumnName="Self_Rating" />
+                <ScalarProperty Name="App_Rating" ColumnName="App_Rating" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmpSkills_t">
+            <EntityTypeMapping TypeName="PerformanceDBModel.EmpSkills_t">
+              <MappingFragment StoreEntitySet="EmpSkills_t">
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="SelfComments" ColumnName="SelfComments" />
+                <ScalarProperty Name="AppComments" ColumnName="AppComments" />
+                <ScalarProperty Name="EmpSkillId" ColumnName="EmpSkillId" />
+                <ScalarProperty Name="SkillId" ColumnName="SkillId" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Self_Rating" ColumnName="Self_Rating" />
+                <ScalarProperty Name="App_Rating" ColumnName="App_Rating" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parameter_t">
+            <EntityTypeMapping TypeName="PerformanceDBModel.Parameter_t">
+              <MappingFragment StoreEntitySet="Parameter_t">
+                <ScalarProperty Name="CriteriaId" ColumnName="CriteriaId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projects_t">
+            <EntityTypeMapping TypeName="PerformanceDBModel.Projects_t">
+              <MappingFragment StoreEntitySet="Projects_t">
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Manager" ColumnName="Manager" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role_t">
+            <EntityTypeMapping TypeName="PerformanceDBModel.Role_t">
+              <MappingFragment StoreEntitySet="Role_t">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="CriteriaIds" ColumnName="CriteriaIds" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Skills_t">
+            <EntityTypeMapping TypeName="PerformanceDBModel.Skills_t">
+              <MappingFragment StoreEntitySet="Skills_t">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Objective_t">
+            <EntityTypeMapping TypeName="PerformanceDBModel.Objective_t">
+              <MappingFragment StoreEntitySet="Objective_t">
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="ObjectiveID" ColumnName="ObjectiveID" />
+                <ScalarProperty Name="Provideyourinputc" ColumnName="Provideyourinputc" />
+                <ScalarProperty Name="Provideyourinputb" ColumnName="Provideyourinputb" />
+                <ScalarProperty Name="Provideyourinputa" ColumnName="Provideyourinputa" />
+                <ScalarProperty Name="Provideyourinput" ColumnName="Provideyourinput" />
+                <ScalarProperty Name="Communicationb" ColumnName="Communicationb" />
+                <ScalarProperty Name="Communicationa" ColumnName="Communicationa" />
+                <ScalarProperty Name="Communication" ColumnName="Communication" />
+                <ScalarProperty Name="CustomerDelight" ColumnName="CustomerDelight" />
+                <ScalarProperty Name="Commitment" ColumnName="Commitment" />
+                <ScalarProperty Name="HighlyPositive" ColumnName="HighlyPositive" />
+                <ScalarProperty Name="Attitude" ColumnName="Attitude" />
+                <ScalarProperty Name="TeamBuilding" ColumnName="TeamBuilding" />
+                <ScalarProperty Name="SelfMotivating" ColumnName="SelfMotivating" />
+                <ScalarProperty Name="ImplementationconsiderationforINV" ColumnName="ImplementationconsiderationforINV" />
+                <ScalarProperty Name="WhitePapers" ColumnName="WhitePapers" />
+                <ScalarProperty Name="PrepartaionofIndepth" ColumnName="PrepartaionofIndepth" />
+                <ScalarProperty Name="KnowledgeSharingSessions" ColumnName="KnowledgeSharingSessions" />
+                <ScalarProperty Name="CertificationsToBeAchievedManagementb" ColumnName="CertificationsToBeAchievedManagementb" />
+                <ScalarProperty Name="CertificationsToBeAchievedManagementa" ColumnName="CertificationsToBeAchievedManagementa" />
+                <ScalarProperty Name="CertificationsToBeAchievedManagement" ColumnName="CertificationsToBeAchievedManagement" />
+                <ScalarProperty Name="OCPINV" ColumnName="OCPINV" />
+                <ScalarProperty Name="CertificationsToBeAchievedproduct" ColumnName="CertificationsToBeAchievedproduct" />
+                <ScalarProperty Name="OraclePreSales" ColumnName="OraclePreSales" />
+                <ScalarProperty Name="CertificationsToBeAchievedGeneric" ColumnName="CertificationsToBeAchievedGeneric" />
+                <ScalarProperty Name="Formulatingthedesignforhandling" ColumnName="Formulatingthedesignforhandling" />
+                <ScalarProperty Name="InnovativeThoughts" ColumnName="InnovativeThoughts" />
+                <ScalarProperty Name="SkillImprovisationc" ColumnName="SkillImprovisationc" />
+                <ScalarProperty Name="SkillImprovisationb" ColumnName="SkillImprovisationb" />
+                <ScalarProperty Name="SkillImprovisationa" ColumnName="SkillImprovisationa" />
+                <ScalarProperty Name="LearningPurchasing" ColumnName="LearningPurchasing" />
+                <ScalarProperty Name="Newskillacquired" ColumnName="Newskillacquired" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_t">
+            <EntityTypeMapping TypeName="PerformanceDBModel.Log_t">
+              <MappingFragment StoreEntitySet="Log_t">
+                <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+                <ScalarProperty Name="Method" ColumnName="Method" />
+                <ScalarProperty Name="InnerException" ColumnName="InnerException" />
+                <ScalarProperty Name="Page" ColumnName="Page" />
+                <ScalarProperty Name="Error_Message" ColumnName="Error_Message" />
+                <ScalarProperty Name="LogId" ColumnName="LogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

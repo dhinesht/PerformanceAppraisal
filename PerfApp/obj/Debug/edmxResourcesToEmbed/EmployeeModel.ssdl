@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PerformanceDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="PerformanceDBModelStoreContainer">
+    <EntitySet Name="Appraisal_t" EntityType="PerformanceDBModel.Store.Appraisal_t" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employee_t" EntityType="PerformanceDBModel.Store.Employee_t" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmpProject_t" EntityType="PerformanceDBModel.Store.EmpProject_t" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmpSkills_t" EntityType="PerformanceDBModel.Store.EmpSkills_t" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Log_t" EntityType="PerformanceDBModel.Store.Log_t" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Objective_t" EntityType="PerformanceDBModel.Store.Objective_t" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Parameter_t" EntityType="PerformanceDBModel.Store.Parameter_t" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Projects_t" EntityType="PerformanceDBModel.Store.Projects_t" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Role_t" EntityType="PerformanceDBModel.Store.Role_t" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Skills_t" EntityType="PerformanceDBModel.Store.Skills_t" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Appraisal_t">
+    <Key>
+      <PropertyRef Name="AppId" />
+    </Key>
+    <Property Name="AppId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmpSkills" Type="nvarchar" />
+    <Property Name="EmpProjects" Type="nvarchar" />
+    <Property Name="EmpId" Type="int" />
+    <Property Name="DoAssessment" Type="datetime" />
+    <Property Name="DoAssessmentDisc" Type="datetime" />
+    <Property Name="DoAssessorCompletion" Type="datetime" />
+    <Property Name="DoFinalization" Type="datetime" />
+    <Property Name="SelfOverall" Type="nvarchar" MaxLength="50" />
+    <Property Name="AssessorOverAll" Type="nvarchar" MaxLength="50" />
+    <Property Name="FinalOverAll" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecPromotion" Type="nvarchar" MaxLength="50" />
+    <Property Name="NotPromoting" Type="nvarchar" MaxLength="50" />
+    <Property Name="Understanding" Type="nvarchar" MaxLength="50" />
+    <Property Name="Responsibility" Type="nvarchar" MaxLength="50" />
+    <Property Name="From" Type="datetime" />
+    <Property Name="To" Type="datetime" />
+    <Property Name="Weightage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="SkillRevComment" Type="nvarchar" MaxLength="50" />
+    <Property Name="SkillRevRating" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProRevComment" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProRevRating" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProAppOtherCmnt" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employee_t">
+    <Key>
+      <PropertyRef Name="Emp_Id" />
+    </Key>
+    <Property Name="Emp_Id" Type="int" Nullable="false" />
+    <Property Name="Firstname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lastname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dateofbirth" Type="datetime" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dateofjoining" Type="datetime" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastAppRating" Type="int" />
+    <Property Name="DesigId" Type="uniqueidentifier" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="RoleId" Type="uniqueidentifier" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="PwdReset" Type="int" />
+    <Property Name="Reviewer" Type="int" />
+    <Property Name="Appraiser" Type="int" />
+  </EntityType>
+  <EntityType Name="EmpProject_t">
+    <Key>
+      <PropertyRef Name="EmpProjId" />
+    </Key>
+    <Property Name="EmpId" Type="int" Nullable="false" />
+    <Property Name="EmpProjId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Type" Type="int" />
+    <Property Name="SelfComments" Type="nvarchar" MaxLength="50" />
+    <Property Name="AppComments" Type="nvarchar" MaxLength="50" />
+    <Property Name="Self_Rating" Type="nvarchar" MaxLength="50" />
+    <Property Name="App_Rating" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EmpSkills_t">
+    <Key>
+      <PropertyRef Name="SkillId" />
+    </Key>
+    <Property Name="EmpId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SelfComments" Type="nvarchar" MaxLength="50" />
+    <Property Name="AppComments" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmpSkillId" Type="uniqueidentifier" />
+    <Property Name="SkillId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Self_Rating" Type="nvarchar" MaxLength="50" />
+    <Property Name="App_Rating" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Log_t">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Name="LogId" Type="int" Nullable="false" />
+    <Property Name="Error_Message" Type="nvarchar" MaxLength="50" />
+    <Property Name="Page" Type="nvarchar" MaxLength="50" />
+    <Property Name="InnerException" Type="nvarchar" MaxLength="50" />
+    <Property Name="Method" Type="nvarchar" MaxLength="50" />
+    <Property Name="Datetime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Objective_t">
+    <Key>
+      <PropertyRef Name="ObjectiveID" />
+    </Key>
+    <Property Name="Newskillacquired" Type="nvarchar" MaxLength="250" />
+    <Property Name="LearningPurchasing" Type="datetime" />
+    <Property Name="SkillImprovisationa" Type="nvarchar" MaxLength="250" />
+    <Property Name="SkillImprovisationb" Type="nvarchar" MaxLength="250" />
+    <Property Name="SkillImprovisationc" Type="datetime" />
+    <Property Name="InnovativeThoughts" Type="nvarchar(max)" />
+    <Property Name="Formulatingthedesignforhandling" Type="datetime" />
+    <Property Name="CertificationsToBeAchievedGeneric" Type="nvarchar" MaxLength="250" />
+    <Property Name="OraclePreSales" Type="datetime" />
+    <Property Name="CertificationsToBeAchievedproduct" Type="nvarchar" MaxLength="250" />
+    <Property Name="OCPINV" Type="datetime" />
+    <Property Name="CertificationsToBeAchievedManagement" Type="nvarchar" MaxLength="250" />
+    <Property Name="CertificationsToBeAchievedManagementa" Type="nvarchar" MaxLength="250" />
+    <Property Name="CertificationsToBeAchievedManagementb" Type="datetime" />
+    <Property Name="KnowledgeSharingSessions" Type="nvarchar" MaxLength="250" />
+    <Property Name="PrepartaionofIndepth" Type="datetime" />
+    <Property Name="WhitePapers" Type="nvarchar" MaxLength="250" />
+    <Property Name="ImplementationconsiderationforINV" Type="datetime" />
+    <Property Name="SelfMotivating" Type="nvarchar" MaxLength="250" />
+    <Property Name="TeamBuilding" Type="datetime" />
+    <Property Name="Attitude" Type="nvarchar" MaxLength="250" />
+    <Property Name="HighlyPositive" Type="datetime" />
+    <Property Name="Commitment" Type="nvarchar" MaxLength="250" />
+    <Property Name="CustomerDelight" Type="datetime" />
+    <Property Name="Communication" Type="nvarchar" MaxLength="250" />
+    <Property Name="Communicationa" Type="nvarchar" MaxLength="250" />
+    <Property Name="Communicationb" Type="datetime" />
+    <Property Name="Provideyourinput" Type="nvarchar" MaxLength="500" />
+    <Property Name="Provideyourinputa" Type="nvarchar" MaxLength="500" />
+    <Property Name="Provideyourinputb" Type="nvarchar" MaxLength="500" />
+    <Property Name="Provideyourinputc" Type="nvarchar" MaxLength="500" />
+    <Property Name="ObjectiveID" Type="int" Nullable="false" />
+    <Property Name="EmpId" Type="int" />
+  </EntityType>
+  <EntityType Name="Parameter_t">
+    <Key>
+      <PropertyRef Name="CriteriaId" />
+    </Key>
+    <Property Name="CriteriaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Projects_t">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Manager" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Role_t">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CriteriaIds" Type="nvarchar" MaxLength="150" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Skills_t">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="PerformanceAppEntities-Web.config Connection String" description="PerformanceAppEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/EmployeeModel.csdl|res://*/EmployeeModel.ssdl|res://*/EmployeeModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=GAUTHAM\SQLEXPRESS;initial catalog=PerformanceDB;integrated security=False;user id=Sqllogin;password=Sqllogin;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Repositary\\Work\\PerfApp\\PerfApp\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PerformanceAppEntities']/@connectionString" />
+  </parameter>
+</parameters>
