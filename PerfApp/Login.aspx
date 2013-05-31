@@ -34,13 +34,7 @@
             width:100%;
             height:100%;
         }
-        fieldset {
-border: 2px solid #575757;
-border-radius: 8px;
--webkit-border-radius: 8px;
--moz-border-radius: 8px;
-
-}  input.twitterStyleTextbox {
+          input.twitterStyleTextbox {
 
 border: 1px solid #c4c4c4;
 
@@ -139,7 +133,7 @@ box-shadow: 0px 0px 8px #d9d9d9;
     Rounded="true"
     TrackPosition="true" />
            
-  <fieldset style="width: 350px; margin-left: 340px;margin-top:20px;background-color:#E8E8E8" align="center" id="Panel1" runat="server">   <div  >
+  <fieldset style="width: 350px; margin-left: 340px;margin-top:20px;background-color:#CAD6F7" align="center" id="Panel1" runat="server">   <div  >
          <table border="0" align="center">
             <tr>
                 <td></td>
